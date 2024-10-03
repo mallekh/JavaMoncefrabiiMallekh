@@ -6,9 +6,9 @@ public class Main {
         lion.name="lion";
         lion.age=21;
         lion.isMammal=true;
-       //  System.out.println(lion.family);
+        System.out.println(lion.family);
         // lajout du tableau animal??*/
-        Animal lion =new Animal("filedae","lion",23,true);
+       /* Animal lion =new Animal("filedae","lion",23,true);
         Animal tiger =new Animal("filedae","tiger",24,true);
         Animal[] animals  = new Animal[25];
         animals[0]= lion;
@@ -17,12 +17,72 @@ public class Main {
 
 
 
+
         Zoo myZoo=new Zoo("bouderbela","gafsa",40);
        System.out.println( myZoo);
        //System.out.println(myZoo.toString() );
        System.out.println(lion.toString() );
-       System.out.println();
+       System.out.println();*/
+      /*  Zoo zoo = new Zoo("National Zoo", "New York", 10);
+
+
+        Animal lion = new Animal("Felidae", "Lion", 5, true);
+        Animal elephant = new Animal("Elephantidae", "Elephant", 10, true);
+        Animal eagle = new Animal("Accipitridae", "Eagle", 3, false);
+
+
+        System.out.println(zoo.addAnimal(lion));
+        System.out.println(zoo.addAnimal(elephant));
+        System.out.println(zoo.addAnimal(eagle));
+        zoo.displayAnimals();
+
+        System.out.println(zoo);
+        int index = zoo.searchAnimal(lion);
+        System.out.println("Index de l'animal cherché: " + index);
+
+
+        Animal identicalLion = new Animal("Felidae", "Lion", 5, true);
+
+
+        int identicalIndex = zoo.searchAnimal(identicalLion);
+        System.out.println("Index de l'animal identique cherché: " + identicalIndex);*/
+        Zoo zoo = new Zoo("National Zoo", "New York", 10);
+
+
+        Animal lion = new Animal("Felidae", "Lion", 5, true);
+        Animal elephant = new Animal("Elephantidae", "Elephant", 10, true);
+        Animal identicalLion = new Animal("Felidae", "Lion", 4, true); // Même nom mais age différent
+
+
+        System.out.println(zoo.addAnimal(lion));    // true
+        System.out.println(zoo.addAnimal(elephant)); // true
+        System.out.println(zoo.addAnimal(identicalLion)); // false, animal déjà présent
+
+
+        zoo.displayAnimals();
+
+
+        for (int i = 0; i < 8; i++) {
+            System.out.println(zoo.addAnimal(new Animal("Family " + i, "Animal " + i, i + 1, true)));
+        }
+
+
+        zoo.displayAnimals();
+        // Supprimer un animal
+        boolean removedLion = zoo.removeAnimal(lion);
+        System.out.println("Suppression de Lion réussie: " + removedLion); // true
+
+
+        Animal tiger = new Animal("Felidae", "Tiger", 4, true);
+        boolean removedTiger = zoo.removeAnimal(tiger);
+        System.out.println("Suppression de Tiger réussie: " + removedTiger); // false
+
+
+        zoo.displayAnimals();
+    }
+
+
 
 
     }
-}
+

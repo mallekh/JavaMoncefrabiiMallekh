@@ -3,11 +3,13 @@ public class Animal {
     String name;
     int age;
     boolean isMammal;
+
     Animal (){
         this.family="";
         this.name="";
         this.age=0;
         this.isMammal=true;
+
     }
     Animal(String family,String name,int age,boolean isMammal)
     {
@@ -26,4 +28,5 @@ public class Animal {
                 ", isMammal=" + isMammal +
                 '}';
     }
+
 }
