@@ -23,7 +23,7 @@ public class Main {
        //System.out.println(myZoo.toString() );
        System.out.println(lion.toString() );
        System.out.println();*/
-      /*  Zoo zoo = new Zoo("National Zoo", "New York", 10);
+      /*s  Zoo zoo = new Zoo("National Zoo", "New York", 10);
 
 
         Animal lion = new Animal("Felidae", "Lion", 5, true);
@@ -78,10 +78,25 @@ public class Main {
         System.out.println("Suppression de Tiger réussie: " + removedTiger); // false
 
 
-        zoo.displayAnimals();
+        Zoo zoo1 = new Zoo("Zoo National", "Paris", 10);
+        Zoo zoo2 = new Zoo("Zoo Safari", "Lyon", 8);
+
+        // Ajout d'animaux dans les zoos
+        zoo1.addAnimal(new Animal("Felidae", "Lion", 5, true));
+        zoo1.addAnimal(new Animal("Felidae", "Lion", 5, true));
+
+        zoo2.addAnimal(new Animal("Felidae", "Lion", 5, true));
+        zoo2.addAnimal( new Animal("Felidae", "Lion", 5, true));
+        zoo2.addAnimal(new Animal("Felidae", "Lion", 5, true));
+
+        // Test de la méthode isZooFull pour chaque zoo
+        System.out.println("Le zoo1 est-il plein ? " + zoo1.isZooFull());
+        System.out.println("Le zoo2 est-il plein ? " + zoo2.isZooFull());
+
+        // Test de la méthode comparerZoo
+        Zoo zooAvecPlusAnimaux = Zoo.comparerZoo(zoo1, zoo2);
+        System.out.println("Le zoo avec le plus d'animaux est " + zooAvecPlusAnimaux.name + " avec " + zooAvecPlusAnimaux.getNombreAnimaux() + " animaux.");
     }
-
-
 
 
     }
