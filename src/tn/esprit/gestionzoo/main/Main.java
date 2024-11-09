@@ -1,7 +1,7 @@
 
 package tn.esprit.gestionzoo.main;
-import tn.esprit.gestionzoo.entities.Animal;
-import tn.esprit.gestionzoo.entities.Zoo;
+import tn.esprit.gestionzoo.entities.*;
+
 public class Main {
     public static void main(String[] args) {
        /* Animal lion =new Animal();
@@ -90,18 +90,27 @@ public class Main {
         zoo1.addAnimal(new Animal("Felidae", "Lion", 5, true));
 
         zoo2.addAnimal(new Animal("Felidae", "Lion", 5, true));
-        zoo2.addAnimal( new Animal("Felidae", "Lion", 5, true));
+        zoo2.addAnimal(new Animal("Felidae", "Lion", 5, true));
         zoo2.addAnimal(new Animal("Felidae", "Lion", 5, true));
 
         // Test de la méthode isZooFull pour chaque zoo
         System.out.println("Le zoo1 est-il plein ? " + zoo1.isZooFull());
         System.out.println("Le zoo2 est-il plein ? " + zoo2.isZooFull());
 
+
+        //Penguin P =new Penguin();
+        //  Dolphin D = new Dolphin();
+        // Terrestrial T= new Terrestrial();
+
         // Test de la méthode comparerZoo
         Zoo zooAvecPlusAnimaux = Zoo.comparerZoo(zoo1, zoo2);
         System.out.println("Le zoo avec le plus d'animaux est " + zooAvecPlusAnimaux.getname() + " avec " + zooAvecPlusAnimaux.getNombreAnimaux() + " animaux.");
-    }
+        Dolphin dolphin = new Dolphin("Flipper", 5);
+        Penguin penguin = new Penguin("Pingu", 3);
 
-
+        // Afficher les informations sur les animaux
+        System.out.println(dolphin.toString());
+        System.out.println(penguin.toString());
     }
+}
 
