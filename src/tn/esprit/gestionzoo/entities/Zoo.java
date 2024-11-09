@@ -1,10 +1,12 @@
+
+package tn.esprit.gestionzoo.entities;
 import java.util.Arrays;
 
 public class Zoo {
     private Animal[] animals;
     private int animalCount;
-    String name;
-    String city;
+    private String name;
+    private String city;
     int nbCages;
 
     // Constructeur par défaut
@@ -17,7 +19,7 @@ public class Zoo {
     }
 
     // Constructeur paramétré
-    Zoo(String name, String city, int nbCages) {
+   public Zoo(String name, String city, int nbCages) {
         this.animals = new Animal[10]; // Initialise un tableau de taille fixe
         this.animalCount = 0;          // Initialise le compteur d'animaux à 0
         this.name = name;
@@ -28,6 +30,7 @@ public class Zoo {
     public int getNombreAnimaux() {
         return animalCount;
     }
+    public String getname(){return name;}
     // Méthode pour ajouter un animal
     public boolean addAnimal(Animal animal) {
 
