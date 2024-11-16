@@ -105,12 +105,42 @@ public class Main {
         // Test de la méthode comparerZoo
         Zoo zooAvecPlusAnimaux = Zoo.comparerZoo(zoo1, zoo2);
         System.out.println("Le zoo avec le plus d'animaux est " + zooAvecPlusAnimaux.getname() + " avec " + zooAvecPlusAnimaux.getNombreAnimaux() + " animaux.");
-        Dolphin dolphin = new Dolphin("Flipper", 5);
-        Penguin penguin = new Penguin("Pingu", 3);
+       // Dolphin dolphin = new Dolphin("Flipper", 5);
+      //  Penguin penguin = new Penguin("Pingu", 3);
 
         // Afficher les informations sur les animaux
-        System.out.println(dolphin.toString());
-        System.out.println(penguin.toString());
+       // System.out.println(dolphin.toString());
+       // System.out.println(penguin.toString());
+        Aquatic dolphin = new Dolphin( "Dauphin", 8);
+        Aquatic shark = new Dolphin("Requin", 15);
+        Aquatic clownfish = new Dolphin("Poisson-clown" ,2);
+
+        // Ajout des animaux aquatiques au zoo
+        zoo.addAquaticAnimal(dolphin);
+        zoo.addAquaticAnimal(shark);
+        zoo.addAquaticAnimal(clownfish);
+        Dolphin dolphin1 = new Dolphin("Dauphin1", 8);
+        Penguin penguin1 = new Penguin("Pingouin1", 5, 20.0f);
+        Penguin penguin2 = new Penguin("Pingouin2", 3, 25.5f);
+
+        zoo.addAquaticAnimal(dolphin1);
+        zoo.addAquaticAnimal(penguin1);
+        zoo.addAquaticAnimal(penguin2);
+
+       // zoo.allSwim();
+        System.out.println("Profondeur maximale des pingouins : " + zoo.maxPenguinSwimmingDepth());
+        zoo.displayNumberOfAquaticsByType();
+        Dolphin dolphin4 = new Dolphin("Dauphin1", 5);
+        Dolphin dolphin5 = new Dolphin("Dauphin1", 5);
+
+        // Création d'un dauphin différent
+        Dolphin dolphin6= new Dolphin("Dauphin2", 7);
+
+        // Test de la méthode equals()
+        System.out.println("Dolphin1 est égal à Dolphin2 ? " + dolphin4.equals(dolphin1)); // true
+        System.out.println("Dolphin1 est égal à Dolphin3 ? " + dolphin1.equals(dolphin6)); // false
+
+
     }
 }
 

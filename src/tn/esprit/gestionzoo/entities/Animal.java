@@ -1,5 +1,5 @@
 package tn.esprit.gestionzoo.entities;
-public class Animal {
+public  class Animal {
     String family;
     String name;
     int age;
@@ -29,5 +29,6 @@ public class Animal {
                 ", isMammal=" + isMammal +
                 '}';
     }
+
 
 }
