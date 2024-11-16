@@ -2,6 +2,7 @@
 package tn.esprit.gestionzoo.entities;
 import java.util.Arrays;
 
+
 public class Zoo {
     private Animal[] animals;
     private int animalCount;
@@ -33,22 +34,21 @@ public class Zoo {
     }
     public String getname(){return name;}
     // Méthode pour ajouter un animal
-    public boolean addAnimal(Animal animal) {
+    public void addAnimal(Animal animal) throws ZooFullException {
 
         if (searchAnimal(animal) != -1) {
             System.out.println("Cet animal existe déjà dans le zoo.");
-            return false;
+
         }
 
 
         if (animalCount < animals.length) {
             animals[animalCount] = animal;
             animalCount++;
-            return true;
+
         }
 
-        System.out.println("Le zoo est plein. Impossible d'ajouter cet animal.");
-        return false;
+        throw new ZooFullException("Le zoo est plein. Impossible d'ajouter " + animal.getName() + ".");
     }
 
 

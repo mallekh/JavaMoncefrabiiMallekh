@@ -4,6 +4,7 @@ import tn.esprit.gestionzoo.entities.*;
 
 public class Main {
     public static void main(String[] args) {
+
        /* Animal lion =new Animal();
         Zoo myZoo=new Zoo();
         lion.family="aziz";
@@ -51,27 +52,32 @@ public class Main {
         int identicalIndex = zoo.searchAnimal(identicalLion);
         System.out.println("Index de l'animal identique cherché: " + identicalIndex);*/
         Zoo zoo = new Zoo("National Zoo", "New York", 10);
-
+        try {
+            Dolphin dolphin = new Dolphin("Dauphin", 5);
+            zoo.addAnimal(dolphin);
+        } catch (ZooFullException e) {
+            System.out.println(e.getMessage());
+        }
 
         Animal lion = new Animal("Felidae", "Lion", 5, true);
         Animal elephant = new Animal("Elephantidae", "Elephant", 10, true);
         Animal identicalLion = new Animal("Felidae", "Lion", 4, true); // Même nom mais age différent
 
 
-        System.out.println(zoo.addAnimal(lion));    // true
-        System.out.println(zoo.addAnimal(elephant)); // true
-        System.out.println(zoo.addAnimal(identicalLion)); // false, animal déjà présent
+       // System.out.println(zoo.addAnimal(lion));    // true
+       // System.out.println(zoo.addAnimal(elephant)); // true
+       // System.out.println(zoo.addAnimal(identicalLion)); // false, animal déjà présent
 
 
         zoo.displayAnimals();
 
-
+/*
         for (int i = 0; i < 8; i++) {
             System.out.println(zoo.addAnimal(new Animal("Family " + i, "Animal " + i, i + 1, true)));
-        }
+        }*/
 
 
-        zoo.displayAnimals();
+      /*  zoo.displayAnimals();
         // Supprimer un animal
         boolean removedLion = zoo.removeAnimal(lion);
         System.out.println("Suppression de Lion réussie: " + removedLion); // true
@@ -104,7 +110,7 @@ public class Main {
 
         // Test de la méthode comparerZoo
         Zoo zooAvecPlusAnimaux = Zoo.comparerZoo(zoo1, zoo2);
-        System.out.println("Le zoo avec le plus d'animaux est " + zooAvecPlusAnimaux.getname() + " avec " + zooAvecPlusAnimaux.getNombreAnimaux() + " animaux.");
+        System.out.println("Le zoo avec le plus d'animaux est " + zooAvecPlusAnimaux.getname() + " avec " + zooAvecPlusAnimaux.getNombreAnimaux() + " animaux.");*/
        // Dolphin dolphin = new Dolphin("Flipper", 5);
       //  Penguin penguin = new Penguin("Pingu", 3);
 
